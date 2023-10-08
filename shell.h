@@ -15,6 +15,9 @@
 
 #define Bound " \t\n"
 
+extern char **environ;
+
+
 /*==========Functions prototypes==========*/
 char *read_line(void);
 char **divider(char *line);
