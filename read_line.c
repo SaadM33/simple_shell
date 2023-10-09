@@ -9,13 +9,13 @@ char *read_line(void)
 
 	char *line = NULL;
 	size_t length = 0;
-	ssize_t n;
+	ssize_t nchars_read;
 
 	if (isatty(STDIN_FILENO)) /*print the prompt $ only in the interactive mode*/
 		write(STDOUT_FILENO, "$ ", 2);
 
-	n = getline(&line, &length, stdin);
-	if (n == -1)
+	nchars_read = getline(&line, &length, stdin);
+	if (nchars_read == -1)
 	{
 		free(line);
 		return (NULL);
