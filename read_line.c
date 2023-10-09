@@ -1,6 +1,6 @@
 #include "shell.h"
 /**
- * read_line - read the line
+ * read_line - displays the prompt and read the line
  * Return: line
  */
 
