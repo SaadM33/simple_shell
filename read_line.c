@@ -18,7 +18,7 @@ char *read_line(void)
 	if (nchars_read == -1)
 	{
 		free(line);
-		return (NULL);
+		exit(EXIT_FAILURE); //was a return, i heard this is better practice in the case of failure
 	}
 	return (line);
 }
