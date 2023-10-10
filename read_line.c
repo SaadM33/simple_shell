@@ -20,6 +20,7 @@ char *read_line(void)
 		free(line);
 		return (NULL);
 	}
+	free(line);
 	return (line);
 }
 
