@@ -21,7 +21,8 @@ extern char **environ;
 /*==========Functions prototypes==========*/
 char *read_line(void);
 char **divider(char *line);
-
+void free_array_of_strings(char **arr);
+int _execute(char **cmd, char *input);
 
 /*==========Strings prototypes==========*/
 char *_strdup(const char *str);
