@@ -1,4 +1,4 @@
-#include "shell.h"
+#include"shell.h"
 
 /**
  * _execute - Excute Simple Shell Command (Fork,Wait,Excute)
@@ -29,7 +29,7 @@ int _execute(char **cmd, char *input)
 	{
 		if (execve(*cmd, cmd, environ) == -1)
 		{
-      perror("execve");
+      			perror("execve");
 			free(input);
 			free(cmd);
 			exit(EXIT_FAILURE);
@@ -38,3 +38,4 @@ int _execute(char **cmd, char *input)
 	}
 	wait(&status);
 	return (0);
+}
