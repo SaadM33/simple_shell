@@ -15,7 +15,6 @@ int main(int ac, char **av)
 	int status = 0;
 	int counter = 0;
 	(void) ac;
-	(void) av;
 
 	while (1)
 	{
@@ -31,6 +30,6 @@ int main(int ac, char **av)
 		if (!cmd)
 			continue;
 
-		status = _execute(cmd, av);
+		status = _execute(cmd, line, counter, av);
 	}
 }
