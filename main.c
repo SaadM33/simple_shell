@@ -13,12 +13,12 @@ int main(int ac, char **av)
 	char *line = NULL;
 	char **cmd = NULL;
 	int status = 0;
+	int counter = 0;
 	(void) ac;
-	(void) av;
-	int i = 0;
 
 	while (1)
 	{
+		counter++;
 		line = read_line();
 		if (line == NULL) /*end of file handler Crtl + D*/
 		{
@@ -30,8 +30,6 @@ int main(int ac, char **av)
 		if (!cmd)
 			continue;
 
-	free(cmd);
-	cmd = NULL;
-	/*status = _execute(cmd, av);*/
+		status = _execute(cmd, line, counter, av);
 	}
 }

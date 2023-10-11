@@ -8,7 +8,7 @@
  * Return: -1 Wrong Command 0 Command Excuted
  */
 
-int _execute(char **cmd, char *input)
+int _execute(char **cmd, char *input, int c, char **argv)
 {
 	int status;
 	pid_t pid;
@@ -29,7 +29,7 @@ int _execute(char **cmd, char *input)
 	{
 		if (execve(*cmd, cmd, environ) == -1)
 		{
-      			perror("execve");
+      			print_error(cmd[0], c, argv);
 			free(input);
 			free(cmd);
 			exit(EXIT_FAILURE);
