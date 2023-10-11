@@ -31,5 +31,9 @@ int main(int ac, char **av)
 			continue;
 
 		status = _execute(cmd, line, counter, av);
+		free(cmd);
+		free(line);
+		cmd = NULL;
+		line = NULL;
 	}
 }
