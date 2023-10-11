@@ -24,7 +24,7 @@ extern char **environ;
 char *read_line(void);
 char **divider(char *line);
 void free_array_of_strings(char **arr);
-int _execute(char **cmd, char *input);
+int _execute(char **cmd, char *input, int c, char **argv);
 void print_error(char *input, int counter, char argv);
 
 /*==========Strings prototypes==========*/
