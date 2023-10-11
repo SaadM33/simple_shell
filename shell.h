@@ -17,7 +17,8 @@
 
 extern char **environ;
 
-
+/*==========Macros========================*/
+#define WRITE(c) (write(STDOUT_FILENO, c, _strlen(c)))
 /*==========Functions prototypes==========*/
 char *read_line(void);
 char **divider(char *line);
