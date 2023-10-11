@@ -5,6 +5,8 @@
  *
  * @cmd:Parsed Command
  * @input: User Input
+ *@c: counter
+ *@argv: name
  * Return: -1 Wrong Command 0 Command Excuted
  */
 
@@ -29,7 +31,7 @@ int _execute(char **cmd, char *input, int c, char **argv)
 	{
 		if (execve(*cmd, cmd, environ) == -1)
 		{
-      			print_error(cmd[0], c, argv);
+			print_error(cmd[0], c, argv);
 			free(input);
 			free(cmd);
 			exit(EXIT_FAILURE);
