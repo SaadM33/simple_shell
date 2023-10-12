@@ -1,7 +1,7 @@
 #include "shell.h"
 
 /**
- * print_error - Display Error message Based on Command and How the Times the Shell Looped
+ * print_error - Show Error message Based on Command and Times Shell Ran
  * @input:user Input
  * @counter:SimpleShell Count Loop
  * @argv:Program Name
