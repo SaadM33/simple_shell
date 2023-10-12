@@ -40,7 +40,7 @@ int _strcmp(char *s1, char *s2)
 {
 	int cmp;
 	cmp = (int)*s1 - (int)*s2;
-	
+
 	while (*s1)
 	{
 		if (*s1 != *s2)
