@@ -1,51 +1,58 @@
 #include"shell.h"
+
+/**
+ * intlen - Calculate the length of an integer
+ * @n: Integer to find the length of
+ * Return: Length of the integer
+ */
+int intlen(unsigned int n) {
+    int len = 0;
+    if (n == 0) {
+        return 1;
+    }
+    while (n > 0) {
+        n /= 10;
+        len++;
+    }
+    return len;
+}
+
+/**
+ * array_rev - Reverse a character array
+ * @s: Character array to reverse
+ * @len: Length of the character array
+ */
+void array_rev(char *s, int len) {
+    int i, j;
+    char temp;
+    for (i = 0, j = len - 1; i < j; i++, j--) {
+        temp = s[i];
+        s[i] = s[j];
+        s[j] = temp;
+    }
+}
+
 /**
  * _itoa - Convert Integer To Char
  * @n: Int To Convert
  * Return: Char Pointer
  */
-char *_itoa(unsigned int n)
-{
-	int len = 0, i = 0;
-	char *s;
-	int start = 0;
-	int end = len - 1;
+char *_itoa(unsigned int n) {
+    int len = 0, i = 0;
+    char *s;
 
-	/*Calculate the length of the integer*/
-	if (n == 0)
-	{
-		len = 1;
-	}
-	else
-	{
-		unsigned int temp = n;
-
-		while (temp > 0)
-		{
-			temp /= 10;
-			len++;
-		}
-	}
-	s = (char *)malloc(len + 1);
-	if (!s)
-		return (NULL);
-	s[len] = '\0';
-	/*Convert the integer to a string*/
-	while (i < len)
-	{
-		s[i] = (n % 10) + '0';
-		n /= 10;
-		i++;
-	}
-	/* Reverse the string*/
-	while (start < end)
-	{
-		char temp = s[start];
-
-		s[start] = s[end];
-		s[end] = temp;
-		start++;
-		end--;
-	}
-	return (s);
+    len = intlen(n);
+    s = (char *)malloc(len + 1);
+    if (!s)
+        return (NULL);
+    *s = '\0';
+    while (n / 10) {
+        s[i] = (n % 10) + '0';
+        n /= 10;
+        i++;
+    }
+    s[i] = (n % 10) + '0';
+    array_rev(s, len);
+    s[i + 1] = '\0';
+    return (s);
 }
