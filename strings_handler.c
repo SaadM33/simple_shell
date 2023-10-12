@@ -27,7 +27,7 @@ char *_strdup(const char *str)
 }
 
 /**
- * _strcmp - Compare two strings
+ * _strcmp - Compare two stringss
  * @s1: The first string to compare
  * @s2: The second string to compare
  *
