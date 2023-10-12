@@ -19,10 +19,8 @@ char *read_line(void)
 	{
 		free(line);
 		line = NULL;
-		exit(EXIT_FAILURE);
+		return (NULL);
 		/*was a return, i heard this is better practice in the case of failure*/
 	}
 	return (line);
-
 }
-

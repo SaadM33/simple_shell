@@ -1,10 +1,9 @@
 #include"shell.h"
-
 /**
-*
-*
-*/
-
+ * divider - divind the commannds
+ * @line: userInput
+ * Return: sting array
+ */
 char **divider(char *line)
 {
 	char *token = NULL;
@@ -18,16 +17,6 @@ char **divider(char *line)
 
 	tmp = _strdup(line);
 	token = strtok(tmp, Bound);
-
-	if (token == NULL)
-	{
-	free(tmp);
-	tmp = NULL;
-	free(line);
-	line = NULL;
-	return (NULL);
-	}
-
 	while (token)
 	{
 		cpmt++;
@@ -43,16 +32,13 @@ char **divider(char *line)
 		line = NULL;
 		return (NULL);
 	}
-    token = strtok(line, Bound);
+	token = strtok(line, Bound);
 	while (token)
 	{
 		cmd[i] = _strdup(token);
 		token = strtok(NULL, Bound);
-        i++;
+		i++;
 	}
-	free(line);
-	line = NULL;
 	cmd[i] = NULL;
 	return (cmd);
-
 }
