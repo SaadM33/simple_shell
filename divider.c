@@ -35,7 +35,7 @@ char **divider(char *line)
 	token = strtok(line, Bound);
 	while (token)
 	{
-		cmd[i] = _strdup(token);
+		cmd[i] = token;
 		token = strtok(NULL, Bound);
 		i++;
 	}
