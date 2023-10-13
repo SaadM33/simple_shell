@@ -1,6 +1,29 @@
 #include"shell.h"
 
 /**
+ * free_array_of_strings - Frees dynamically allocated strings in an array
+ * @arr: Array of dynamically allocated strings
+ *
+ * This function takes an array of dynamically allocated strings and frees each
+ * string individually, then frees the array itself. It helps prevent memory
+ * leaks when you're done with the array.
+ */
+void free_array_of_strings(char **arr)
+{
+	int i;
+	if (!arr)
+		return;
+
+	for (i = 0; arr[i]; i++)
+	{
+		free(arr[i]);
+		arr[i] = NULL;
+	}
+
+	free(arr);
+	arr = NULL;
+}
+/**
  * intlen - Calculate the length of an integer
  * @n: Integer to find the length of
  * Return: Length of the integer
