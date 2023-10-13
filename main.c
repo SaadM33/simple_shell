@@ -31,7 +31,7 @@ int main(int ac, char **av)
 			continue;
 
 		status = _execute(cmd, line, counter, av);
-		free_array_of_strings(cmd);
+		free(cmd);
 		free(line);
 		cmd = NULL;
 		line = NULL;
