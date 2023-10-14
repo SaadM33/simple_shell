@@ -31,8 +31,17 @@ int main(int ac, char **av)
 		cmd = divider(line);
 		if (!cmd)
 			continue;
-
-		status = _execute(cmd, line, counter, av);
+		if (_strcmp(cmd[0], "exit") == 0)
+		{
+			exit_built_in(cmd, line);
+		}
+		else if (_strcmp(cmd[0], "env") == 0)
+		{
+			env_built_in();
+			continue;
+		}
+		else
+			status = _execute(cmd, line, counter, av);
 		free(cmd);
 		cmd = NULL;
 		free(line);
