@@ -30,6 +30,7 @@ void print_error(char *input, int counter, char **argv);
 /*==========Built-in Function Handling==========*/
 void  exit_built_in(char **cmd, char *input);
 int env_built_in(void);
+
 /*==========Strings prototypes==========*/
 char *_strdup(const char *str);
 int _strcmp(char *s1, char *s2);
@@ -39,5 +40,6 @@ char *_itoa(unsigned int n);
 int intlen(unsigned int n);
 void array_rev(char *s, int len);
 void handle_comments(char *line);
+int _atoi(char *s);
 
 #endif /* SHELL_H */
