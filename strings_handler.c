@@ -88,3 +88,22 @@ char *_strcat(char *dest, char *src)
 	*p = *src;
 	return (dest);
 }
+/**
+ * _strcpy - cpy a string
+ * @dest: The destination string to which the source is copyed
+ * @src: The source string to be copyed to the destination
+ *
+ * Return: A pointer to the destination string after the copying
+ */
+char *_strcpy(char *dest, char *src)
+{
+	int  i = 0;
+
+	while (src[i])
+	{
+		dest[i] = src[i];
+		i++;
+	}
+	dest[i] = '\0';
+	return (dest);
+}
