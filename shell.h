@@ -35,5 +35,6 @@ char *_strcat(char *dest, char *src);
 char *_itoa(unsigned int n);
 int intlen(unsigned int n);
 void array_rev(char *s, int len);
+void handle_comments(char *line);
 
 #endif /* SHELL_H */
