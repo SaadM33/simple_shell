@@ -11,6 +11,7 @@
 void free_array_of_strings(char **arr)
 {
 	int i;
+
 	if (!arr)
 		return;
 
