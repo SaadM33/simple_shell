@@ -22,5 +22,25 @@ char *read_line(void)
 		return (NULL);
 		/*was a return, i heard this is better practice in the case of failure*/
 	}
+	handle_comments(line);
 	return (line);
+}
+
+/**
+ * handle_comments - remove everything after #
+ * @line: input;
+ * Return:void
+ */
+void handle_comments(char *line)
+{
+	int i;
+
+		for (i = 0; line[i] != '\0'; i++)
+		{
+			if (line[i] == '#')
+			{
+			line[i] = '\0';
+			break;
+			}
+	}
 }
