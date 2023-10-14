@@ -24,6 +24,8 @@ int main(int ac, char **av)
 		{
 			if (isatty(STDIN_FILENO)) /*Print new line only in the interactive mode*/
 				write(STDOUT_FILENO, "\n", 1);
+			free(line);
+			line = NULL;
 			return (status);
 		}
 		cmd = divider(line);
@@ -32,8 +34,8 @@ int main(int ac, char **av)
 
 		status = _execute(cmd, line, counter, av);
 		free(cmd);
-		free(line);
 		cmd = NULL;
+		free(line);
 		line = NULL;
 	}
 }
