@@ -27,6 +27,10 @@ void free_array_of_strings(char **arr);
 int _execute(char **cmd, char *input, int c, char **argv);
 void print_error(char *input, int counter, char **argv);
 
+/*==========Built-in Function Handling==========*/
+void  exit_built_in(char **cmd, char *input);
+int env_built_in(void);
+
 /*==========Strings prototypes==========*/
 char *_strdup(const char *str);
 int _strcmp(char *s1, char *s2);
@@ -40,4 +44,5 @@ void array_rev(char *s, int len);
 char *_getenv(char *name);
 char *_getpath(char *command);
 void handle_comments(char *line);
+int _atoi(char *s);
 #endif /* SHELL_H */

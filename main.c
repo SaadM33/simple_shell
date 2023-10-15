@@ -9,7 +9,6 @@
 
 int main(int ac, char **av)
 {
-
 	char *line = NULL;
 	char **cmd = NULL;
 	int status = 0;
@@ -28,11 +27,22 @@ int main(int ac, char **av)
 			line = NULL;
 			return (status);
 		}
-		cmd = divider(line);
-		if (!cmd)
+		if (line[0] == '\0')
 			continue;
-
-		status = _execute(cmd, line, counter, av);
+		cmd = divider(line);
+		if (cmd == NULL)
+			continue;
+		if (_strcmp(cmd[0], "exit") == 0)
+		{
+			exit_built_in(cmd, line);
+		}
+		else if (_strcmp(cmd[0], "env") == 0)
+		{
+			env_built_in();
+			continue;
+		}
+		else
+			status = _execute(cmd, line, counter, av);
 		free(cmd);
 		cmd = NULL;
 		free(line);
