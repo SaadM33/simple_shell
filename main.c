@@ -9,7 +9,6 @@
 
 int main(int ac, char **av)
 {
-
 	char *line = NULL;
 	char **cmd = NULL;
 	int status = 0;
@@ -32,13 +31,7 @@ int main(int ac, char **av)
 			continue;
 		cmd = divider(line);
 		if(cmd == NULL)
-		{
-			free(cmd);
-			cmd = NULL;
-			free(line);
-			line = NULL;
 			continue;
-		}
 		if (_strcmp(cmd[0], "exit") == 0)
 		{
 			exit_built_in(cmd, line);
