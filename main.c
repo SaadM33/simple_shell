@@ -30,7 +30,7 @@ int main(int ac, char **av)
 		if (line[0] == '\0')
 			continue;
 		cmd = divider(line);
-		if (cmd == NULL)
+		if (cmd[0] == NULL)
 			continue;
 		if (_strcmp(cmd[0], "exit") == 0)
 		{
