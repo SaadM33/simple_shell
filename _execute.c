@@ -41,7 +41,6 @@ int _execute(char **cmd, char *input, int c, char **argv)
 		if (execve(last_cmd, cmd, environ) == -1)
 		{
 			free(last_cmd), last_cmd = NULL;
-			/*print_error(cmd[0], c, argv);*/
 			free(input);
 			input = NULL;
 			free_array_of_strings(cmd);

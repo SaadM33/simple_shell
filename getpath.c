@@ -3,7 +3,7 @@
  * _getpath - get the path
  * @command: the command
  * Return: Null
-*/
+ */
 
 char *_getpath(char *command)
 {
@@ -36,10 +36,10 @@ char *_getpath(char *command)
 			if (stat(last_command, &st) == 0)
 			{
 				free(pathenv);
-				pathenv = NULL;
 				return (last_command);
 			}
-			free(last_command), last_command = NULL;
+			free(last_command);
+			last_command = NULL;
 			dir = strtok(NULL, ":");
 		}
 	}
