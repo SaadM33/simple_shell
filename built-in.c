@@ -8,13 +8,13 @@
  */
 void  exit_built_in(char **cmd, char *input)
 {
-    int statue, i = 0;
+    int statue;
 
     if (cmd[1] == NULL)
     {
-		  free(input);
-		  free(cmd);
-		  exit(EXIT_SUCCESS);
+	free(input);
+	free(cmd);
+	exit(EXIT_SUCCESS);
     }
     else
 		{
@@ -32,12 +32,11 @@ void  exit_built_in(char **cmd, char *input)
 int  env_built_in(void)
 {
   int i;
-	int len;
 
 	for (i = 0; environ[i] != NULL; i++)
 	{
-	  WRITE(environ[i]);
-    WRITE("\n");
+		WRITE(environ[i]);
+    		WRITE("\n");
 	}
 	return (0);
 }
