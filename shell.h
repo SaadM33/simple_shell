@@ -32,9 +32,12 @@ char *_strdup(const char *str);
 int _strcmp(char *s1, char *s2);
 int _strlen(char *s);
 char *_strcat(char *dest, char *src);
+char *_strcpy(char *dest, char *src);
+
 char *_itoa(unsigned int n);
 int intlen(unsigned int n);
 void array_rev(char *s, int len);
+char *_getenv(char *name);
+char *_getpath(char *command);
 void handle_comments(char *line);
-
 #endif /* SHELL_H */

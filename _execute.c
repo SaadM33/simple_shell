@@ -12,8 +12,18 @@
 
 int _execute(char **cmd, char *input, int c, char **argv)
 {
+	char *last_cmd;
 	int status;
 	pid_t pid;
+
+	last_cmd = _getpath(cmd[0]);
+	if (!last_cmd)
+	{
+		print_error(cmd[0], c, argv);
+		if (!cmd)
+			free_array_of_strings(cmd);
+		return (127);
+	}
 
 	if (*cmd == NULL)
 	{
@@ -26,16 +36,15 @@ int _execute(char **cmd, char *input, int c, char **argv)
 		perror("Error");
 		return (-1);
 	}
-
 	if (pid == 0)
 	{
-		if (execve(*cmd, cmd, environ) == -1)
+		if (execve(last_cmd, cmd, environ) == -1)
 		{
-			print_error(cmd[0], c, argv);
+			free(last_cmd), last_cmd = NULL;
+			/*print_error(cmd[0], c, argv);*/
 			free(input);
 			input = NULL;
-			free(cmd);
-			cmd = NULL;
+			free_array_of_strings(cmd);
 			exit(EXIT_FAILURE);
 		}
 		return (EXIT_SUCCESS);
