@@ -28,9 +28,9 @@ int main(int ac, char **av)
 			line = NULL;
 			return (status);
 		}
-		cmd = divider(line);
-		if (!cmd)
+		if (line[0] == '\0')
 			continue;
+		cmd = divider(line);
 		if (_strcmp(cmd[0], "exit") == 0)
 		{
 			exit_built_in(cmd, line);
