@@ -8,21 +8,21 @@
  */
 void  exit_built_in(char **cmd, char *input)
 {
-    int statue;
+	int statue;
 
-    if (cmd[1] == NULL)
-    {
-	free(input);
-	free(cmd);
-	exit(EXIT_SUCCESS);
-    }
-    else
-		{
-			statue = _atoi(cmd[1]);
-			free(input);
-			free(cmd);
-			exit(statue);
-		}
+	if (cmd[1] == NULL)
+	{
+		free(input);
+		free(cmd);
+		exit(EXIT_SUCCESS);
+	}
+	else
+	{
+		statue = _atoi(cmd[1]);
+		free(input);
+		free(cmd);
+		exit(statue);
+	}
 }
 
 /**
@@ -31,12 +31,12 @@ void  exit_built_in(char **cmd, char *input)
  */
 int  env_built_in(void)
 {
-  int i;
+	int i;
 
 	for (i = 0; environ[i] != NULL; i++)
 	{
 		WRITE(environ[i]);
-    		WRITE("\n");
+		WRITE("\n");
 	}
 	return (0);
 }
@@ -49,21 +49,21 @@ int  env_built_in(void)
  */
 int _atoi(char *s)
 {
-    int result = 0;
-    int sign = 1;
-    int i = 0;
+	int result = 0;
+	int sign = 1;
+	int i = 0;
 
-    while (s[i] == ' ' || (s[i] >= 9 && s[i] <= 13))
-        i++;
-    if (s[i] == '-' || s[i] == '+')
-    {
-        sign = (s[i] == '-') ? -1 : 1;
-        i++;
-    }
-    while (s[i] >= '0' && s[i] <= '9')
-    {
-        result = (result * 10) + (s[i] - '0');
-        i++;
-    }
-    return result * sign;
+	while (s[i] == ' ' || (s[i] >= 9 && s[i] <= 13))
+		i++;
+	if (s[i] == '-' || s[i] == '+')
+	{
+		sign = (s[i] == '-') ? -1 : 1;
+		i++;
+	}
+	while (s[i] >= '0' && s[i] <= '9')
+	{
+		result = (result * 10) + (s[i] - '0');
+		i++;
+	}
+	return result * sign;
 }
