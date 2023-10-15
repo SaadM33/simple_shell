@@ -31,6 +31,14 @@ int main(int ac, char **av)
 		if (line[0] == '\0')
 			continue;
 		cmd = divider(line);
+		if(cmd == NULL)
+		{
+			free(cmd);
+			cmd = NULL;
+			free(line);
+			line = NULL;
+			continue;
+		}
 		if (_strcmp(cmd[0], "exit") == 0)
 		{
 			exit_built_in(cmd, line);
