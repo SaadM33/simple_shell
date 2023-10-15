@@ -21,6 +21,11 @@ char *read_line(void)
 		line = NULL;
 		return (NULL);
 	}
+	if (line[0] == '\n')
+	{
+		free(line);
+		return ("\0");
+	}
 	handle_comments(line);
 	return (line);
 }
