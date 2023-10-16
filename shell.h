@@ -11,7 +11,7 @@
 #include<stdlib.h>
 #include<string.h>
 #include<unistd.h>
-
+#include <signal.h>
 
 #define Bound " \t\n"
 
@@ -26,6 +26,7 @@ char **divider(char *line);
 void free_array_of_strings(char **arr);
 int _execute(char **cmd, char *input, int c, char **argv);
 void print_error(char *input, int counter, char **argv);
+void sighandler(int sig);
 
 /*==========Built-in Function Handling==========*/
 void  exit_built_in(char **cmd, char *input);

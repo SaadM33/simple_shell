@@ -15,6 +15,7 @@ int main(int ac, char **av)
 	int counter = 0;
 	(void) ac;
 
+	signal(SIGINT, sighandler);
 	while (1)
 	{
 		counter++;
@@ -47,5 +48,19 @@ int main(int ac, char **av)
 		cmd = NULL;
 		free(line);
 		line = NULL;
+	}
+}
+
+
+/**
+ * sighandler - Handle ^C
+ * @sig:Captured Signal
+ * Return: Void
+ */
+void sighandler(int sig)
+{
+	if (sig == SIGINT)
+	{
+		WRITE("\n$ ");
 	}
 }
