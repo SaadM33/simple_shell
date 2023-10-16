@@ -41,10 +41,10 @@ void handle_comments(char *line)
 
 		for (i = 0; line[i] != '\0'; i++)
 		{
-			if (line[i] == '#')
-			{
-			line[i] = '\0';
-			break;
-			}
+				if ((line[i] == '#') && (!i || line[i - 1] == ' '))
+				{
+					line[i] = '\0';
+					break;
+				}
 	}
 }
