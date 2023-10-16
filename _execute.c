@@ -48,6 +48,7 @@ int _execute(char **cmd, char *input, int c, char **argv)
 		}
 		return (EXIT_SUCCESS);
 	}
+	free(last_command);
 	wait(&status);
 	return (0);
 }
