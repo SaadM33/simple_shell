@@ -3,7 +3,7 @@
  * _getpath - get the path
  * @command: the command
  * Return: Null
- */
+*/
 
 char *_getpath(char *command)
 {
@@ -35,8 +35,7 @@ char *_getpath(char *command)
 			_strcat(last_command, command);
 			if (stat(last_command, &st) == 0)
 			{
-				free(pathenv);
-				pathenv = NULL;
+				free(pathenv), pathenv = NULL;
 				return (last_command);
 			}
 			free(last_command), last_command = NULL;
@@ -44,6 +43,5 @@ char *_getpath(char *command)
 		}
 	}
 	free(pathenv);
-	free(last_command); /*Free last_command outside the loop*/
-	return (NULL); /* Return NULL if not found*/
+	return (NULL);
 }
