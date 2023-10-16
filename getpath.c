@@ -36,13 +36,14 @@ char *_getpath(char *command)
 			if (stat(last_command, &st) == 0)
 			{
 				free(pathenv);
+				pathenv = NULL;
 				return (last_command);
 			}
-			free(last_command);
-			last_command = NULL;
+			free(last_command), last_command = NULL;
 			dir = strtok(NULL, ":");
 		}
 	}
 	free(pathenv);
-	return (NULL);
+	free(last_command); /*Free last_command outside the loop*/
+	return (NULL); /* Return NULL if not found*/
 }

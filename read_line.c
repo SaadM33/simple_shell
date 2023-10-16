@@ -24,7 +24,7 @@ char *read_line(void)
 	if (line[0] == '\n')
 	{
 		free(line);
-		return ("\0");
+		return (NULL);
 	}
 	handle_comments(line);
 	return (line);
