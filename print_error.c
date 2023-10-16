@@ -19,7 +19,6 @@ void print_error(char *input, int counter, char **argv)
 	ernum = _itoa(counter);
 	write(STDERR_FILENO, ernum, _strlen(ernum));
 	free(ernum);
-
 	write(STDERR_FILENO, ": ", 2);
 	write(STDERR_FILENO, input, _strlen(input));
 	write(STDERR_FILENO, error_message, _strlen(error_message));
