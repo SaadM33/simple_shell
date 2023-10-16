@@ -7,16 +7,19 @@
  * @argv:Program Name
  * Return: Void
  */
+
 void print_error(char *input, int counter, char **argv)
 {
 	char *ernum;
+	char error_message[] = ": not found\n";
 
-	WRITE(argv[0]);
-	WRITE(": ");
+	write(STDOUT_FILENO, "", 0);
+	write(STDERR_FILENO, argv[0], _strlen(argv[0]));
+	write(STDERR_FILENO, ": ", 2);
 	ernum = _itoa(counter);
-	WRITE(ernum);
+	write(STDERR_FILENO, ernum, _strlen(ernum));
 	free(ernum);
-	WRITE(": ");
-	WRITE(input);
-	WRITE(": not found\n");
+	write(STDERR_FILENO, ": ", 2);
+	write(STDERR_FILENO, input, _strlen(input));
+	write(STDERR_FILENO, error_message, _strlen(error_message));
 }
