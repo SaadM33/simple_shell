@@ -1,9 +1,9 @@
-            ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
-            ██░▄▄▄░█▄░▄██░▄▀▄░██░▄▄░██░█████░▄▄▄████░▄▄▄░██░██░██░▄▄▄██░█████░███
-            ██▄▄▄▀▀██░███░█░█░██░▀▀░██░█████░▄▄▄████▄▄▄▀▀██░▄▄░██░▄▄▄██░█████░███
-            ██░▀▀▀░█▀░▀██░███░██░█████░▀▀░██░▀▀▀████░▀▀▀░██░██░██░▀▀▀██░▀▀░██░▀▀░
-            ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
-                                    By: SaadM33 - saad484
+                ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+                ██░▄▄▄░█▄░▄██░▄▀▄░██░▄▄░██░█████░▄▄▄████░▄▄▄░██░██░██░▄▄▄██░█████░███
+                ██▄▄▄▀▀██░███░█░█░██░▀▀░██░█████░▄▄▄████▄▄▄▀▀██░▄▄░██░▄▄▄██░█████░███
+                ██░▀▀▀░█▀░▀██░███░██░█████░▀▀░██░▀▀▀████░▀▀▀░██░██░██░▀▀▀██░▀▀░██░▀▀░
+                ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
+                                        By: SaadM33 - saad484
 ## Introduction
 This is a simple UNIX command line interpreter implemented in C. It provides a basic shell environment where users can execute commands.
 
@@ -15,11 +15,39 @@ Do you need clone [this repository](https://github.com/SaadM33/simple_shell/):
 ```
 	git clone https://github.com/SaadM33/simple_shell/
 ```
-and then you can compile with this command:
+And then you can compile with this command:
 ```
 	gcc -Wall -Werror -Wextra -pedantic *.c -o hsh
 ```
-after compilation you can excecute with this command:
+After the compilation you can excecute with this command:
 ```
 	./hsh
 ```
+
+## How to Use
+
+- Compile the program to create the `hsh` executable file (see instructions above).
+- run the executable as follows `./hsh`
+- Enter basic commands like: `ls`, you can add flags along with `ls` command such as `-l`, `-la`(`ls -l`, `ls -la`)
+- Press enter after entering the command
+- to end the execution of the `simple_shell` program press `ctrl + d` or write the word `exit`
+
+### Interactive mode
+
+```
+$ ./hsh
+($) /bin/ls
+hsh main.c shell.c
+($)
+($) exit
+$
+```
+
+### non-Interactive mode
+```
+$ echo "/bin/ls" | ./hsh
+hsh main.c shell.c test_ls_2
+$
+```
+
+
