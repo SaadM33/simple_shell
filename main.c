@@ -32,7 +32,10 @@ int main(int ac, char **av)
 			continue;
 		cmd = divider(line);
 		if (cmd[0] == NULL)
+		{
+			free_all(cmd, input);
 			continue;
+		}
 		if (_strcmp(cmd[0], "exit") == 0)
 		{
 			exit_built_in(cmd, line);
@@ -40,14 +43,12 @@ int main(int ac, char **av)
 		else if (_strcmp(cmd[0], "env") == 0)
 		{
 			env_built_in();
+			free_all(cmd, input);
 			continue;
 		}
 		else
 			status = _execute(cmd, line, counter, av);
-		free(cmd);
-		cmd = NULL;
-		free(line);
-		line = NULL;
+		free_all(cmd, input);
 	}
 }
 
@@ -63,4 +64,18 @@ void sighandler(int sig)
 	{
 		WRITE("\n$ ");
 	}
+}
+
+/**
+ * free_all - Free Array Of Char Pointer And Char Pointer
+ * @cmd:Array Pointer
+ * @line:Char Pointer
+ * Return: Void
+ */
+void free_all(char **cmd, char *line)
+{
+	free(cmd);
+	free(line);
+	cmd = NULL;
+	line = NULL;
 }
