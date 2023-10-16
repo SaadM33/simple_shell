@@ -39,12 +39,13 @@ void handle_comments(char *line)
 {
 	int i;
 
-		for (i = 0; line[i] != '\0'; i++)
+	for (i = 0; line[i] != '\0'; i++)
+	{
+		if ((line[i] == '#') && (!i || line[i - 1] == ' '))
 		{
-				if ((line[i] == '#') && (!i || line[i - 1] == ' '))
-				{
-					line[i] = '\0';
-					break;
-				}
+			line[i] = '\0';
+			break;
+		}
 	}
 }
+
