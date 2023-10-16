@@ -33,7 +33,7 @@ int main(int ac, char **av)
 		cmd = divider(line);
 		if (cmd[0] == NULL)
 		{
-			free_all(cmd, input);
+			free_all(cmd, line);
 			continue;
 		}
 		if (_strcmp(cmd[0], "exit") == 0)
@@ -43,12 +43,12 @@ int main(int ac, char **av)
 		else if (_strcmp(cmd[0], "env") == 0)
 		{
 			env_built_in();
-			free_all(cmd, input);
+			free_all(cmd, line);
 			continue;
 		}
 		else
 			status = _execute(cmd, line, counter, av);
-		free_all(cmd, input);
+		free_all(cmd, line);
 	}
 }
 
