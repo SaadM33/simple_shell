@@ -50,7 +50,6 @@ int main(int ac, char **av)
 		free_all(cmd, line);
 	}
 }
-
 /**
  * sighandler - Handle ^C
  * @sig:Captured Signal
