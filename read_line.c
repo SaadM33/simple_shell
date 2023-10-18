@@ -30,7 +30,7 @@ char *read_line(void)
 	return (line);
 }
 /**
- * handle_comments - remove everything after #
+ * handle_comments - Remove everything after #
  * @line: input;
  * Return:void
  */
