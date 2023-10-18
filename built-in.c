@@ -24,7 +24,6 @@ void  exit_built_in(char **cmd, char *input)
 		exit(statue);
 	}
 }
-
 /**
  * env_built_in - Display Enviroment Variables
  * Return:Always 0
@@ -42,7 +41,7 @@ int  env_built_in(void)
 }
 
 /**
- * _atoi - Converts a string to an integer.
+ * _atoi - Converts a string to An Integer.
  * @s: The string to be converted.
  * Return: The integer representation of the string, or 0 if the string does
  * not contain any valid numeric characters.
