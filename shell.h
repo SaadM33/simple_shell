@@ -20,7 +20,7 @@ extern char **environ;
 /*==========Macros========================*/
 #define WRITE(c) (write(STDOUT_FILENO, c, _strlen(c)))
 
-/*==========Functions prototypes==========*/
+/*==========Functions Prototypes==========*/
 char *read_line(void);
 char **divider(char *line);
 void free_array_of_strings(char **arr);
@@ -33,7 +33,7 @@ void free_all(char **cmd, char *line);
 void  exit_built_in(char **cmd, char *input);
 int env_built_in(void);
 
-/*==========Strings prototypes==========*/
+/*==========Strings Prototypes==========*/
 char *_strdup(const char *str);
 int _strcmp(char *s1, char *s2);
 int _strlen(char *s);
