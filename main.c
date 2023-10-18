@@ -51,7 +51,6 @@ int main(int ac, char **av)
 	}
 }
 
-
 /**
  * sighandler - Handle ^C
  * @sig:Captured Signal
