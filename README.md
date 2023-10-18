@@ -43,7 +43,7 @@ hsh main.c shell.c
 $
 ```
 
-### non-Interactive mode
+### Non-Interactive mode
 ```
 $ echo "/bin/ls" | ./hsh
 hsh main.c shell.c test_ls_2
