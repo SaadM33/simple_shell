@@ -11,8 +11,7 @@ int main(int ac, char **av)
 {
 	char *line = NULL;
 	char **cmd = NULL;
-	int status = 0;
-	int counter = 0;
+	int status = 0, counter = 0;
 	(void) ac;
 
 	signal(SIGINT, sighandler);
