@@ -29,7 +29,6 @@ char *read_line(void)
 	handle_comments(line);
 	return (line);
 }
-
 /**
  * handle_comments - remove everything after #
  * @line: input;
