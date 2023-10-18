@@ -27,10 +27,10 @@ After the compilation you can excecute with this command:
 ## How to Use
 
 - Compile the program to create the `hsh` executable file (see instructions above).
-- run the executable as follows `./hsh`
+- Run the executable as follows `./hsh`
 - Enter basic commands like: `ls`, you can add flags along with `ls` command such as `-l`, `-la`(`ls -l`, `ls -la`)
 - Press enter after entering the command
-- to end the execution of the `simple_shell` program press `ctrl + d` or write the word `exit`
+- To end the execution of the `simple_shell` program press `ctrl + d` or write the word `exit`
 
 ### Interactive mode
 
