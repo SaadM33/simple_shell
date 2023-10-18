@@ -64,7 +64,6 @@ void sighandler(int sig)
 		WRITE("\n$ ");
 	}
 }
-
 /**
  * free_all - Free Array Of Char Pointer And Char Pointer
  * @cmd:Array Pointer
