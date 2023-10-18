@@ -25,7 +25,6 @@ char *_strdup(const char *str)
 		ptr[i] = str[i];
 	return (ptr);
 }
-
 /**
  * _strcmp - Compare two stringss
  * @s1: The first string to compare

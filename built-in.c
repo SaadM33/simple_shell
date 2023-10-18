@@ -39,7 +39,6 @@ int  env_built_in(void)
 	}
 	return (0);
 }
-
 /**
  * _atoi - Converts a string to An Integer.
  * @s: The string to be converted.
