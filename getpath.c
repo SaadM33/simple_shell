@@ -2,7 +2,7 @@
 /**
  * _getpath - get the path
  * @command: the command
- * Return: Null
+ * Return: NUll
 */
 
 char *_getpath(char *command)
